@@ -333,6 +333,7 @@ let
         ];
         dom = [
           patches.libxmlpatch8300only
+          patches.ext_libxml_php830_832
           patches.ext_dom_tests_php83
         ];
         sqlite3 = [ patches.ext_sqlite3 ];
@@ -375,6 +376,12 @@ let
           patches.ext_libxml_php830_832
         ];
         simplexml = [
+          patches.ext_libxml_php830_832
+        ];
+        soap = [
+          patches.ext_libxml_php830_832
+        ];
+        xmlwriter = [
           patches.ext_libxml_php830_832
         ];
       };
