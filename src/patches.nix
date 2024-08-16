@@ -43,4 +43,16 @@
       excludes = [ "NEWS" ];
     }
   );
+  ext_libxml_php8214 = (
+    fetchpatch {
+      url = "https://github.com/php/php-src/commit/e2d97314ab342d434e778cd00a2f34e4bdb07664.patch";
+      hash = "sha256-w0hyYUgbRGpvIBfWeDTSEUGpiJdyrtNjKy+Fn1vyAO0=";
+    }
+  );
+  ext_libxml_php830_832 = (
+    fetchpatch {
+      url = "https://github.com/php/php-src/commit/120bd364aaa8093bb592dcab4badba61d3103158.patch";
+      hash = "sha256-+BClPkQHsI9zyeQvCH1IuZcabByy7uPHcFS1iTmBHKU=";
+    }
+  );
 }

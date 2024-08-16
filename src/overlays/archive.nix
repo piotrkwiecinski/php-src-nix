@@ -299,6 +299,11 @@ let
       version = "8.2.14";
       hash = "sha256-+HHhMTM9YK5sU3sa3dvCrqVMQ2xWKvmG+4MJwGAEC54=";
       extensions = extensions.php81-to-php8300;
+      patches = {
+        php = [
+          patches.ext_libxml_php8214
+        ];
+      };
     }
     {
       version = "8.2.15";
@@ -337,11 +342,39 @@ let
       version = "8.3.1";
       hash = "sha256-xA+ukZf6aKUy9qBiwxba/jsExUUTa1S56tSTL8JsauE=";
       extensions = extensions.php81-to-php8300;
+      patches = {
+        php = [
+          patches.ext_libxml_php830_832
+        ];
+        dom = [
+          patches.ext_libxml_php830_832
+        ];
+        simplexml = [
+          patches.ext_libxml_php830_832
+        ];
+        soap = [
+          patches.ext_libxml_php830_832
+        ];
+        libxml = [
+          patches.ext_libxml_php830_832
+        ];
+      };
     }
     {
       version = "8.3.2";
       hash = "sha256-WCs8g3qNlS7//idKXklwbEOojBYoMMKow1gIn+dEkoQ=";
       extensions = extensions.php81-to-php8300;
+      patches = {
+        php = [
+          patches.ext_libxml_php830_832
+        ];
+        dom = [
+          patches.ext_libxml_php830_832
+        ];
+        simplexml = [
+          patches.ext_libxml_php830_832
+        ];
+      };
     }
     {
       version = "8.3.3";
