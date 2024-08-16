@@ -162,12 +162,14 @@ let
       version = "8.1.27";
       hash = "sha256-oV/XPqRPLfMLB9JHhuB9GUiw6j7tC4uEVzXVANwov/E=";
       patches = {
-        php = [ patches.libxmlpatch ];
+        php = [
+          patches.libxmlpatch
+          patches.ext_libxml_php8214
+        ];
       };
       cflags = " -Wno-compare-distinct-pointer-types -Wno-implicit-const-int-float-conversion -Wno-deprecated-declarations -Wno-incompatible-function-pointer-types -Wno-incompatible-pointer-types-discards-qualifiers";
       extensions = extensions.php81-to-php8300;
     }
-
     {
       version = "8.2.5";
       hash = "sha256-5agGY8yk9gRK2GpIl5gUfHrwN+ypb2zTV6s20oy2N1c=";
@@ -345,6 +347,7 @@ let
       patches = {
         php = [
           patches.ext_libxml_php830_832
+          patches.ext_libxml_php8214
         ];
         dom = [
           patches.ext_libxml_php830_832
@@ -355,7 +358,7 @@ let
         soap = [
           patches.ext_libxml_php830_832
         ];
-        libxml = [
+        xmlwriter = [
           patches.ext_libxml_php830_832
         ];
       };

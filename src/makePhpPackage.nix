@@ -120,6 +120,7 @@ let
             # the SOAP extension requires the `session` extension.
             soap = prevPO.extensions.soap.overrideAttrs (attrs: {
               internalDeps = attrs.internalDeps or [ ] ++ [ prevPO.extensions.session ];
+              patches = (patches.soap or [ ]) ++ attrs.patches;
             });
 
             sockets = prevPO.extensions.sockets.overrideAttrs (attrs: {
@@ -150,6 +151,14 @@ let
             sqlite3 = prevPO.extensions.sqlite3.overrideAttrs (attrs: {
               NIX_CFLAGS_COMPILE = attrs.NIX_CFLAGS_COMPILE or "" + cflags;
               patches = (patches.sqlite3 or [ ]) ++ attrs.patches;
+            });
+            simplexml = prevPO.extensions.simplexml.overrideAttrs (attrs: {
+              NIX_CFLAGS_COMPILE = attrs.NIX_CFLAGS_COMPILE or "" + cflags;
+              patches = (patches.simplexml or [ ]) ++ attrs.patches;
+            });
+            xmlwriter = prevPO.extensions.xmlwriter.overrideAttrs (attrs: {
+              NIX_CFLAGS_COMPILE = attrs.NIX_CFLAGS_COMPILE or "" + cflags;
+              patches = (patches.xmlwriter or [ ]) ++ attrs.patches;
             });
           };
         };
