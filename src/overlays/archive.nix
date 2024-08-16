@@ -181,6 +181,7 @@ let
         ];
         dom = [ patches.ext_dom_tests_php8118 ];
         sqlite3 = [ patches.ext_sqlite3_tests ];
+        simplexml = [ patches.libxmlpatch ];
       };
       extensions = extensions.php81-to-php8300;
     }
@@ -195,6 +196,7 @@ let
         ];
         dom = [ patches.ext_dom_tests_php8118 ];
         sqlite3 = [ patches.ext_sqlite3_tests ];
+        simplexml = [ patches.libxmlpatch ];
       };
       extensions = extensions.php81-to-php8300;
     }
@@ -209,6 +211,7 @@ let
         ];
         dom = [ ];
         sqlite3 = [ patches.ext_sqlite3_tests ];
+        simplexml = [ patches.libxmlpatch ];
       };
       extensions = extensions.php81-to-php8300;
     }
@@ -223,6 +226,7 @@ let
         ];
         dom = [ ];
         sqlite3 = [ patches.ext_sqlite3_tests ];
+        simplexml = [ patches.libxmlpatch ];
       };
       extensions = extensions.php81-to-php8300;
     }
@@ -237,6 +241,7 @@ let
         ];
         dom = [ ];
         sqlite3 = [ patches.ext_sqlite3_tests ];
+        simplexml = [ patches.libxmlpatch ];
       };
       extensions = extensions.php81-to-php8300;
     }
@@ -251,6 +256,7 @@ let
         ];
         dom = [ ];
         sqlite3 = [ patches.ext_sqlite3_tests ];
+        simplexml = [ patches.libxmlpatch ];
       };
       extensions = extensions.php81-to-php8300;
     }
@@ -273,12 +279,19 @@ let
       hash = "sha256-cEMl9WsbTBf5+VHh/+9cZOFIiWBT804mJhUsuqLwWJM=";
       patches = {
         php = [
+          patches.ext_libxml_php8214
           patches.libxmlpatch
           patches.ext_sqlite3
           patches.ext_sqlite3_tests
         ];
         dom = [ ];
         sqlite3 = [ patches.ext_sqlite3_tests ];
+        simplexml = [
+          patches.libxmlpatch
+          patches.ext_dom_tests_php83
+        ];
+        soap = [ patches.ext_dom_tests_php83 ];
+        xmlwriter = [ patches.ext_dom_tests_php83 ];
       };
       extensions = extensions.php81-to-php8300;
     }
@@ -287,12 +300,20 @@ let
       hash = "sha256-ZlKfQ7ITEx5rJTxWAr7wXwSUWNISknMPzNY7SKBtZ7o=";
       patches = {
         php = [
+          patches.ext_libxml_php8214
           patches.libxmlpatch
           patches.ext_sqlite3
           patches.ext_sqlite3_tests
+          patches.ext_dom_tests_php83
         ];
         dom = [ ];
         sqlite3 = [ patches.ext_sqlite3_tests ];
+        simplexml = [
+          patches.libxmlpatch
+          patches.ext_dom_tests_php83
+        ];
+        soap = [ patches.ext_dom_tests_php83 ];
+        xmlwriter = [ patches.ext_dom_tests_php83 ];
       };
       cflags = " -Wno-compare-distinct-pointer-types -Wno-implicit-const-int-float-conversion -Wno-deprecated-declarations -Wno-incompatible-function-pointer-types -Wno-incompatible-pointer-types-discards-qualifiers";
       extensions = extensions.php81-to-php8300;
@@ -341,8 +362,8 @@ let
           patches.ext_dom_tests_php83
         ];
         soap = [
-           patches.ext_libxml_php830_832
-           patches.ext_dom_tests_php83
+          patches.ext_libxml_php830_832
+          patches.ext_dom_tests_php83
         ];
         sqlite3 = [ patches.ext_sqlite3 ];
         xmlwriter = [
