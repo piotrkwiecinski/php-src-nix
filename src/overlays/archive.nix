@@ -135,12 +135,16 @@ let
       hash = "sha256-qGqIwYQMG8gyvP0vvsO4oZQsgxTaXf9T8J+cmNDBLoo=";
       patches = {
         php = [
+          patches.ext_libxml_php8214
           patches.ext_sqlite3_tests
           patches.libxmlpatch
           patches.ext_sqlite3
         ];
         sqlite3 = [ patches.ext_sqlite3_tests ];
-        dom = [ patches.ext_dom_tests_php8120 ];
+        dom = [ ];
+        simplexml = [ patches.libxmlpatch ];
+        soap = [ patches.libxmlpatch ];
+        xmlwriter = [ patches.libxmlpatch ];
       };
       extensions = extensions.php81-to-php8300;
     }
@@ -149,12 +153,16 @@ let
       hash = "sha256-g73iSchKoaBDqMjQ7qCTRcLK5puXhM3wIin8kW+7nqA=";
       patches = {
         php = [
+          patches.ext_libxml_php8214
           patches.ext_sqlite3_tests
           patches.libxmlpatch
           patches.ext_sqlite3
         ];
         sqlite3 = [ patches.ext_sqlite3_tests ];
-        dom = [ patches.ext_dom_tests_php8120 ];
+        dom = [ ];
+        simplexml = [ patches.libxmlpatch ];
+        soap = [ patches.libxmlpatch ];
+        xmlwriter = [ patches.libxmlpatch ];
       };
       extensions = extensions.php81-to-php8300;
     }
@@ -265,12 +273,19 @@ let
       hash = "sha256-OBktrv+r9K9sQnvxesH4JWXZx1IuDb0yIVFilEQ0sos=";
       patches = {
         php = [
+          patches.ext_libxml_php8214
           patches.libxmlpatch
           patches.ext_sqlite3
           patches.ext_sqlite3_tests
         ];
         dom = [ ];
         sqlite3 = [ patches.ext_sqlite3_tests ];
+        simplexml = [
+          patches.libxmlpatch
+          patches.ext_dom_tests_php83
+        ];
+        soap = [ patches.ext_dom_tests_php83 ];
+        xmlwriter = [ patches.ext_dom_tests_php83 ];
       };
       extensions = extensions.php81-to-php8300;
     }
@@ -315,7 +330,6 @@ let
         soap = [ patches.ext_dom_tests_php83 ];
         xmlwriter = [ patches.ext_dom_tests_php83 ];
       };
-      cflags = " -Wno-compare-distinct-pointer-types -Wno-implicit-const-int-float-conversion -Wno-deprecated-declarations -Wno-incompatible-function-pointer-types -Wno-incompatible-pointer-types-discards-qualifiers";
       extensions = extensions.php81-to-php8300;
     }
     {
