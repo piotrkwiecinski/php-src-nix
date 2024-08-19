@@ -61,4 +61,10 @@
       hash = "sha256-IBsaHj7tP3UdchPk9e5kUcIxdRW1nmTbRGsWOqKG1aE=";
     }
   );
+  libxml_sanitize_globals = (
+    fetchpatch {
+      url = "https://github.com/php/php-src/commit/0675edb9330c290bc1884609b71e65390984399a.patch";
+      hash = "sha256-9BEFkbjYZIc9Vwv0hQfzN3lpc+gxRHzP3oz10Cvavbo=";
+    }
+  );
 }
