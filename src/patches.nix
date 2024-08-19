@@ -55,4 +55,10 @@
       hash = "sha256-+BClPkQHsI9zyeQvCH1IuZcabByy7uPHcFS1iTmBHKU=";
     }
   );
+  ext_dom_memory_leak = (
+    fetchpatch {
+      url = "https://github.com/php/php-src/commit/20ac42e1b065e23376e7ea548995636369809a7d.patch";
+      hash = "sha256-IBsaHj7tP3UdchPk9e5kUcIxdRW1nmTbRGsWOqKG1aE=";
+    }
+  );
 }

@@ -65,11 +65,11 @@
     "php-src-82": {
       "flake": false,
       "locked": {
-        "lastModified": 1723579280,
-        "narHash": "sha256-ASgfGCnrLU1XXgNcJbzZaideTwDZ0z4hfQ6vF3XDqAA=",
+        "lastModified": 1723839604,
+        "narHash": "sha256-wWEdD8RsmKYoTa5gbi9+JCQsR6ZEfKHkYAbCzK96HGU=",
         "owner": "php",
         "repo": "php-src",
-        "rev": "8c3f5f99f37697f7781f4abf632916f009064289",
+        "rev": "836e6fa90077d2b0648eb301c3321652874380bb",
         "type": "github"
       },
       "original": {
@@ -82,11 +82,11 @@
     "php-src-83": {
       "flake": false,
       "locked": {
-        "lastModified": 1723628643,
-        "narHash": "sha256-PNLbw1cdS7JA+K+aP6u7s9qBrbZPNogQ3l3O3JhCWMY=",
+        "lastModified": 1723831105,
+        "narHash": "sha256-s4Cerqf4mXdrK+RQt3W2QJIAHbYOdb7gsKzr5Xqlp+c=",
         "owner": "php",
         "repo": "php-src",
-        "rev": "65a101f3a70656690c8565872f76816737a21364",
+        "rev": "140a257f2f6faad2442b857635a9865f9e4d14f8",
         "type": "github"
       },
       "original": {
@@ -99,11 +99,11 @@
     "php-src-master": {
       "flake": false,
       "locked": {
-        "lastModified": 1723732823,
-        "narHash": "sha256-oHQmXAdwrPra/vAOFTI6cTn/vLvZ4od8Ui++PBOPo+g=",
+        "lastModified": 1723881753,
+        "narHash": "sha256-qSOAsajJyIiXz936q02ED08mjNuay5gyKpnfTy1pPzw=",
         "owner": "php",
         "repo": "php-src",
-        "rev": "8853cf3ae950a1658054f286117bc8f77f724f00",
+        "rev": "8db3d36f2fc7bc440d3a0697a2ce04dca5e73ad1",
         "type": "github"
       },
       "original": {

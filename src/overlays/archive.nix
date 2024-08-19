@@ -115,7 +115,10 @@ let
           patches.ext_sqlite3
         ];
         sqlite3 = [ patches.ext_sqlite3_tests ];
-        dom = [ ];
+        dom = [
+          patches.libxmlpatch
+          patches.ext_dom_memory_leak
+        ];
         simplexml = [ patches.libxmlpatch ];
         soap = [ patches.libxmlpatch ];
         xmlwriter = [ patches.libxmlpatch ];
@@ -133,7 +136,10 @@ let
           patches.ext_sqlite3
         ];
         sqlite3 = [ patches.ext_sqlite3_tests ];
-        dom = [ ];
+        dom = [
+          patches.libxmlpatch
+          patches.ext_dom_memory_leak
+        ];
         simplexml = [ patches.libxmlpatch ];
         soap = [ patches.libxmlpatch ];
         xmlwriter = [ patches.libxmlpatch ];
@@ -151,7 +157,7 @@ let
           patches.ext_sqlite3
         ];
         sqlite3 = [ patches.ext_sqlite3_tests ];
-        dom = [ ];
+        dom = [ patches.libxmlpatch ];
         simplexml = [ patches.libxmlpatch ];
         soap = [ patches.libxmlpatch ];
         xmlwriter = [ patches.libxmlpatch ];
@@ -275,7 +281,7 @@ let
           patches.ext_sqlite3
           patches.ext_sqlite3_tests
         ];
-        dom = [ ];
+        dom = [ patches.ext_dom_memory_leak ];
         sqlite3 = [ patches.ext_sqlite3_tests ];
         simplexml = [ patches.libxmlpatch ];
       };
@@ -290,7 +296,7 @@ let
           patches.ext_sqlite3
           patches.ext_sqlite3_tests
         ];
-        dom = [ ];
+        dom = [ patches.ext_dom_memory_leak ];
         sqlite3 = [ patches.ext_sqlite3_tests ];
         simplexml = [ patches.libxmlpatch ];
       };
@@ -306,7 +312,7 @@ let
           patches.ext_sqlite3
           patches.ext_sqlite3_tests
         ];
-        dom = [ ];
+        dom = [ patches.ext_dom_memory_leak ];
         sqlite3 = [ patches.ext_sqlite3_tests ];
         simplexml = [
           patches.libxmlpatch
