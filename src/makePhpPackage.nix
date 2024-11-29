@@ -82,7 +82,7 @@ let
 
             dom = prevPO.extensions.dom.overrideAttrs (attrs: {
               NIX_CFLAGS_COMPILE = attrs.NIX_CFLAGS_COMPILE or "" + cflags;
-              patches = (patches.dom or [ ]) ++ attrs.patches;
+              patches = (patches.dom or [ ]) ++ (attrs.patches or []);
             });
 
             opcache = prevPO.extensions.opcache.overrideAttrs (attrs: {
@@ -120,7 +120,7 @@ let
             # the SOAP extension requires the `session` extension.
             soap = prevPO.extensions.soap.overrideAttrs (attrs: {
               internalDeps = attrs.internalDeps or [ ] ++ [ prevPO.extensions.session ];
-              patches = (patches.soap or [ ]) ++ attrs.patches;
+              patches = (patches.soap or [ ]) ++ (attrs.patches or []);
             });
 
             sockets = prevPO.extensions.sockets.overrideAttrs (attrs: {
@@ -150,15 +150,15 @@ let
 
             sqlite3 = prevPO.extensions.sqlite3.overrideAttrs (attrs: {
               NIX_CFLAGS_COMPILE = attrs.NIX_CFLAGS_COMPILE or "" + cflags;
-              patches = (patches.sqlite3 or [ ]) ++ attrs.patches;
+              patches = (patches.sqlite3 or [ ]) ++ (attrs.patches or []);
             });
             simplexml = prevPO.extensions.simplexml.overrideAttrs (attrs: {
               NIX_CFLAGS_COMPILE = attrs.NIX_CFLAGS_COMPILE or "" + cflags;
-              patches = (patches.simplexml or [ ]) ++ attrs.patches;
+              patches = (patches.simplexml or [ ]) ++ (attrs.patches or []);
             });
             xmlwriter = prevPO.extensions.xmlwriter.overrideAttrs (attrs: {
               NIX_CFLAGS_COMPILE = attrs.NIX_CFLAGS_COMPILE or "" + cflags;
-              patches = (patches.xmlwriter or [ ]) ++ attrs.patches;
+              patches = (patches.xmlwriter or [ ]) ++ (attrs.patches or []);
             });
           };
         };
