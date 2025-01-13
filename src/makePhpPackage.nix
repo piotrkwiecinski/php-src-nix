@@ -82,7 +82,28 @@ let
 
             dom = prevPO.extensions.dom.overrideAttrs (attrs: {
               NIX_CFLAGS_COMPILE = attrs.NIX_CFLAGS_COMPILE or "" + cflags;
-              patches = (patches.dom or [ ]) ++ (attrs.patches or []);
+              patches = (patches.dom or [ ]) ++ (attrs.patches or [])
+                ++ lib.optionals (lib.versionAtLeast prev.php.version == "8.1" && lib.versionOlder prev.php.version == "8.1.31") [
+                  # Fix tests with libxml2 2.12
+                  (prev.fetchpatch {
+                    url = "https://github.com/php/php-src/commit/061058a9b1bbd90d27d97d79aebcf2b5029767b0.patch";
+                    hash = "sha256-0hOlAG+pOYp/gUU0MUMZvzWpgr0ncJi5GB8IeNxxyEU=";
+                    excludes = [
+                      "NEWS"
+                    ];
+            })
+            # Backport of PHP_LIBXML_IGNORE_DEPRECATIONS_START and PHP_LIBXML_IGNORE_DEPRECATIONS_END
+            # Required for libxml2 2.13 compatibility patch.
+            (prev.fetchpatch {
+              url = "https://github.com/php/php-src/commit/e2d97314ab342d434e778cd00a2f34e4bdb07664.patch";
+              hash = "sha256-w0hyYUgbRGpvIBfWeDTSEUGpiJdyrtNjKy+Fn1vyAO0=";
+            })
+            # Fix build with libxml2 2.13+. Has to be applied after libxml2 2.12 patch.
+            (prev.fetchpatch {
+              url = "https://github.com/php/php-src/commit/4fe821311cafb18ca8bdf20b9d796c48a13ba552.patch";
+              hash = "sha256-YC3I0BQi3o3+VmRu/UqpqPpaSC+ekPqzbORTHftbPvY=";
+            })
+          ];
             });
 
             opcache = prevPO.extensions.opcache.overrideAttrs (attrs: {
