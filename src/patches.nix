@@ -43,4 +43,28 @@
       excludes = [ "NEWS" ];
     }
   );
+  ext_libxml_php8214 = (
+    fetchpatch {
+      url = "https://github.com/php/php-src/commit/e2d97314ab342d434e778cd00a2f34e4bdb07664.patch";
+      hash = "sha256-w0hyYUgbRGpvIBfWeDTSEUGpiJdyrtNjKy+Fn1vyAO0=";
+    }
+  );
+  ext_libxml_php830_832 = (
+    fetchpatch {
+      url = "https://github.com/php/php-src/commit/120bd364aaa8093bb592dcab4badba61d3103158.patch";
+      hash = "sha256-+BClPkQHsI9zyeQvCH1IuZcabByy7uPHcFS1iTmBHKU=";
+    }
+  );
+  ext_dom_memory_leak = (
+    fetchpatch {
+      url = "https://github.com/php/php-src/commit/20ac42e1b065e23376e7ea548995636369809a7d.patch";
+      hash = "sha256-IBsaHj7tP3UdchPk9e5kUcIxdRW1nmTbRGsWOqKG1aE=";
+    }
+  );
+  libxml_sanitize_globals = (
+    fetchpatch {
+      url = "https://github.com/php/php-src/commit/0675edb9330c290bc1884609b71e65390984399a.patch";
+      hash = "sha256-9BEFkbjYZIc9Vwv0hQfzN3lpc+gxRHzP3oz10Cvavbo=";
+    }
+  );
 }

@@ -37,12 +37,16 @@ let
       hash = "sha256-0qww1rV0/KWU/gzAHAaT4jWFsnRD40KwqrBydM3kQW4=";
       patches = {
         php = [
+          patches.ext_libxml_php8214
           patches.ext_sqlite3_tests
           patches.libxmlpatch
           patches.ext_sqlite3
         ];
         sqlite3 = [ patches.ext_sqlite3_tests ];
-        dom = [ patches.ext_dom_tests_php8118 ];
+        dom = [ ];
+        simplexml = [ patches.libxmlpatch ];
+        soap = [ patches.libxmlpatch ];
+        xmlwriter = [ patches.libxmlpatch ];
       };
       extensions = extensions.php81-to-php8300;
     }
@@ -51,12 +55,33 @@ let
       hash = "sha256-ZCByB/2jC+kmou8fZv8ma/H9x+AzObyZ+7oKEkXkJ5s=";
       patches = {
         php = [
+          patches.libxml_sanitize_globals
+          patches.ext_libxml_php8214
           patches.ext_sqlite3_tests
           patches.libxmlpatch
           patches.ext_sqlite3
         ];
         sqlite3 = [ patches.ext_sqlite3_tests ];
-        dom = [ patches.ext_dom_tests_php8118 ];
+        dom = [
+          patches.ext_dom_tests_php8118
+          patches.libxml_sanitize_globals
+          patches.ext_dom_memory_leak
+        ];
+        simplexml = [
+          patches.libxml_sanitize_globals
+          patches.libxmlpatch
+          patches.ext_dom_memory_leak
+        ];
+        soap = [
+          patches.libxml_sanitize_globals
+          patches.libxmlpatch
+          patches.ext_dom_memory_leak
+        ];
+        xmlwriter = [
+          patches.libxml_sanitize_globals
+          patches.libxmlpatch
+          patches.ext_dom_memory_leak
+        ];
       };
       extensions = extensions.php81-to-php8300;
     }
@@ -65,12 +90,32 @@ let
       hash = "sha256-VVeFh1FKJwdQD4UxnlfA1N+biAPNsmVmWVrEv0WdxN0=";
       patches = {
         php = [
+          patches.libxml_sanitize_globals
+          patches.ext_libxml_php8214
           patches.ext_sqlite3_tests
           patches.libxmlpatch
           patches.ext_sqlite3
         ];
         sqlite3 = [ patches.ext_sqlite3_tests ];
-        dom = [ patches.ext_dom_tests_php8120 ];
+        dom = [
+          patches.libxml_sanitize_globals
+          patches.ext_dom_memory_leak
+        ];
+        simplexml = [
+          patches.libxml_sanitize_globals
+          patches.libxmlpatch
+          patches.ext_dom_memory_leak
+        ];
+        soap = [
+          patches.libxml_sanitize_globals
+          patches.libxmlpatch
+          patches.ext_dom_memory_leak
+        ];
+        xmlwriter = [
+          patches.libxml_sanitize_globals
+          patches.libxmlpatch
+          patches.ext_dom_memory_leak
+        ];
       };
       extensions = extensions.php81-to-php8300;
     }
@@ -79,12 +124,32 @@ let
       hash = "sha256-bqSegzXWMhd/VrUHFgqhUcewIBhXianBSFn85dSgd20=";
       patches = {
         php = [
+          patches.libxml_sanitize_globals
+          patches.ext_libxml_php8214
           patches.ext_sqlite3_tests
           patches.libxmlpatch
           patches.ext_sqlite3
         ];
         sqlite3 = [ patches.ext_sqlite3_tests ];
-        dom = [ patches.ext_dom_tests_php8120 ];
+        dom = [
+          patches.libxml_sanitize_globals
+          patches.ext_dom_memory_leak
+        ];
+        simplexml = [
+          patches.libxml_sanitize_globals
+          patches.libxmlpatch
+          patches.ext_dom_memory_leak
+        ];
+        soap = [
+          patches.libxml_sanitize_globals
+          patches.libxmlpatch
+          patches.ext_dom_memory_leak
+        ];
+        xmlwriter = [
+          patches.libxml_sanitize_globals
+          patches.libxmlpatch
+          patches.ext_dom_memory_leak
+        ];
       };
       extensions = extensions.php81-to-php8300;
     }
@@ -93,12 +158,19 @@ let
       hash = "sha256-mSNU44LGxhjQHtS+Br7qjewxeLFBU99k08jEi4Xp+8I=";
       patches = {
         php = [
+          patches.ext_libxml_php8214
           patches.ext_sqlite3_tests
           patches.libxmlpatch
           patches.ext_sqlite3
         ];
         sqlite3 = [ patches.ext_sqlite3_tests ];
-        dom = [ patches.ext_dom_tests_php8120 ];
+        dom = [
+          patches.libxmlpatch
+          patches.ext_dom_memory_leak
+        ];
+        simplexml = [ patches.libxmlpatch ];
+        soap = [ patches.libxmlpatch ];
+        xmlwriter = [ patches.libxmlpatch ];
       };
       extensions = extensions.php81-to-php8300;
     }
@@ -107,12 +179,19 @@ let
       hash = "sha256-kppieFF32okt3/ygdLqy8f9XhHOg1K25FcEvXz407Bs=";
       patches = {
         php = [
+          patches.ext_libxml_php8214
           patches.ext_sqlite3_tests
           patches.libxmlpatch
           patches.ext_sqlite3
         ];
         sqlite3 = [ patches.ext_sqlite3_tests ];
-        dom = [ patches.ext_dom_tests_php8120 ];
+        dom = [
+          patches.libxmlpatch
+          patches.ext_dom_memory_leak
+        ];
+        simplexml = [ patches.libxmlpatch ];
+        soap = [ patches.libxmlpatch ];
+        xmlwriter = [ patches.libxmlpatch ];
       };
       extensions = extensions.php81-to-php8300;
     }
@@ -121,12 +200,16 @@ let
       hash = "sha256-sK5YBKmtU6fijQoyYpSV+Bb5NbEIMMcfTsFYJxhac8k=";
       patches = {
         php = [
+          patches.ext_libxml_php8214
           patches.ext_sqlite3_tests
           patches.libxmlpatch
           patches.ext_sqlite3
         ];
         sqlite3 = [ patches.ext_sqlite3_tests ];
-        dom = [ patches.ext_dom_tests_php8120 ];
+        dom = [ patches.libxmlpatch ];
+        simplexml = [ patches.libxmlpatch ];
+        soap = [ patches.libxmlpatch ];
+        xmlwriter = [ patches.libxmlpatch ];
       };
       extensions = extensions.php81-to-php8300;
     }
@@ -135,12 +218,16 @@ let
       hash = "sha256-qGqIwYQMG8gyvP0vvsO4oZQsgxTaXf9T8J+cmNDBLoo=";
       patches = {
         php = [
+          patches.ext_libxml_php8214
           patches.ext_sqlite3_tests
           patches.libxmlpatch
           patches.ext_sqlite3
         ];
         sqlite3 = [ patches.ext_sqlite3_tests ];
-        dom = [ patches.ext_dom_tests_php8120 ];
+        dom = [ ];
+        simplexml = [ patches.libxmlpatch ];
+        soap = [ patches.libxmlpatch ];
+        xmlwriter = [ patches.libxmlpatch ];
       };
       extensions = extensions.php81-to-php8300;
     }
@@ -149,12 +236,16 @@ let
       hash = "sha256-g73iSchKoaBDqMjQ7qCTRcLK5puXhM3wIin8kW+7nqA=";
       patches = {
         php = [
+          patches.ext_libxml_php8214
           patches.ext_sqlite3_tests
           patches.libxmlpatch
           patches.ext_sqlite3
         ];
         sqlite3 = [ patches.ext_sqlite3_tests ];
-        dom = [ patches.ext_dom_tests_php8120 ];
+        dom = [ ];
+        simplexml = [ patches.libxmlpatch ];
+        soap = [ patches.libxmlpatch ];
+        xmlwriter = [ patches.libxmlpatch ];
       };
       extensions = extensions.php81-to-php8300;
     }
@@ -162,12 +253,14 @@ let
       version = "8.1.27";
       hash = "sha256-oV/XPqRPLfMLB9JHhuB9GUiw6j7tC4uEVzXVANwov/E=";
       patches = {
-        php = [ patches.libxmlpatch ];
+        php = [
+          patches.libxmlpatch
+          patches.ext_libxml_php8214
+        ];
       };
       cflags = " -Wno-compare-distinct-pointer-types -Wno-implicit-const-int-float-conversion -Wno-deprecated-declarations -Wno-incompatible-function-pointer-types -Wno-incompatible-pointer-types-discards-qualifiers";
       extensions = extensions.php81-to-php8300;
     }
-
     {
       version = "8.2.5";
       hash = "sha256-5agGY8yk9gRK2GpIl5gUfHrwN+ypb2zTV6s20oy2N1c=";
@@ -179,6 +272,7 @@ let
         ];
         dom = [ patches.ext_dom_tests_php8118 ];
         sqlite3 = [ patches.ext_sqlite3_tests ];
+        simplexml = [ patches.libxmlpatch ];
       };
       extensions = extensions.php81-to-php8300;
     }
@@ -193,6 +287,7 @@ let
         ];
         dom = [ patches.ext_dom_tests_php8118 ];
         sqlite3 = [ patches.ext_sqlite3_tests ];
+        simplexml = [ patches.libxmlpatch ];
       };
       extensions = extensions.php81-to-php8300;
     }
@@ -207,6 +302,7 @@ let
         ];
         dom = [ ];
         sqlite3 = [ patches.ext_sqlite3_tests ];
+        simplexml = [ patches.libxmlpatch ];
       };
       extensions = extensions.php81-to-php8300;
     }
@@ -221,6 +317,7 @@ let
         ];
         dom = [ ];
         sqlite3 = [ patches.ext_sqlite3_tests ];
+        simplexml = [ patches.libxmlpatch ];
       };
       extensions = extensions.php81-to-php8300;
     }
@@ -233,8 +330,9 @@ let
           patches.ext_sqlite3
           patches.ext_sqlite3_tests
         ];
-        dom = [ ];
+        dom = [ patches.ext_dom_memory_leak ];
         sqlite3 = [ patches.ext_sqlite3_tests ];
+        simplexml = [ patches.libxmlpatch ];
       };
       extensions = extensions.php81-to-php8300;
     }
@@ -247,8 +345,9 @@ let
           patches.ext_sqlite3
           patches.ext_sqlite3_tests
         ];
-        dom = [ ];
+        dom = [ patches.ext_dom_memory_leak ];
         sqlite3 = [ patches.ext_sqlite3_tests ];
+        simplexml = [ patches.libxmlpatch ];
       };
       extensions = extensions.php81-to-php8300;
     }
@@ -257,12 +356,19 @@ let
       hash = "sha256-OBktrv+r9K9sQnvxesH4JWXZx1IuDb0yIVFilEQ0sos=";
       patches = {
         php = [
+          patches.ext_libxml_php8214
           patches.libxmlpatch
           patches.ext_sqlite3
           patches.ext_sqlite3_tests
         ];
-        dom = [ ];
+        dom = [ patches.ext_dom_memory_leak ];
         sqlite3 = [ patches.ext_sqlite3_tests ];
+        simplexml = [
+          patches.libxmlpatch
+          patches.ext_dom_tests_php83
+        ];
+        soap = [ patches.ext_dom_tests_php83 ];
+        xmlwriter = [ patches.ext_dom_tests_php83 ];
       };
       extensions = extensions.php81-to-php8300;
     }
@@ -271,12 +377,19 @@ let
       hash = "sha256-cEMl9WsbTBf5+VHh/+9cZOFIiWBT804mJhUsuqLwWJM=";
       patches = {
         php = [
+          patches.ext_libxml_php8214
           patches.libxmlpatch
           patches.ext_sqlite3
           patches.ext_sqlite3_tests
         ];
         dom = [ ];
         sqlite3 = [ patches.ext_sqlite3_tests ];
+        simplexml = [
+          patches.libxmlpatch
+          patches.ext_dom_tests_php83
+        ];
+        soap = [ patches.ext_dom_tests_php83 ];
+        xmlwriter = [ patches.ext_dom_tests_php83 ];
       };
       extensions = extensions.php81-to-php8300;
     }
@@ -285,20 +398,30 @@ let
       hash = "sha256-ZlKfQ7ITEx5rJTxWAr7wXwSUWNISknMPzNY7SKBtZ7o=";
       patches = {
         php = [
+          patches.ext_libxml_php8214
           patches.libxmlpatch
           patches.ext_sqlite3
           patches.ext_sqlite3_tests
+          patches.ext_dom_tests_php83
         ];
         dom = [ ];
         sqlite3 = [ patches.ext_sqlite3_tests ];
+        simplexml = [
+          patches.libxmlpatch
+          patches.ext_dom_tests_php83
+        ];
+        soap = [ patches.ext_dom_tests_php83 ];
+        xmlwriter = [ patches.ext_dom_tests_php83 ];
       };
-      cflags = " -Wno-compare-distinct-pointer-types -Wno-implicit-const-int-float-conversion -Wno-deprecated-declarations -Wno-incompatible-function-pointer-types -Wno-incompatible-pointer-types-discards-qualifiers";
       extensions = extensions.php81-to-php8300;
     }
     {
       version = "8.2.14";
       hash = "sha256-+HHhMTM9YK5sU3sa3dvCrqVMQ2xWKvmG+4MJwGAEC54=";
       extensions = extensions.php81-to-php8300;
+      patches = {
+        php = [ patches.ext_libxml_php8214 ];
+      };
     }
     {
       version = "8.2.15";
@@ -321,27 +444,59 @@ let
       hash = "sha256-3mfQgz1CsZblpm+hozL0Xilsvo6UcuklayoHHDTcXtY=";
       patches = {
         php = [
+          patches.ext_libxml_php830_832
           patches.libxmlpatch8300only
           patches.ext_dom_tests_php83
+          patches.ext_libxml_php8214
         ];
         dom = [
           patches.libxmlpatch8300only
+          patches.ext_libxml_php830_832
+          patches.ext_dom_tests_php83
+        ];
+        simplexml = [
+          patches.ext_libxml_php830_832
+          patches.ext_dom_tests_php83
+        ];
+        soap = [
+          patches.ext_libxml_php830_832
           patches.ext_dom_tests_php83
         ];
         sqlite3 = [ patches.ext_sqlite3 ];
+        xmlwriter = [
+          patches.ext_libxml_php830_832
+          patches.libxmlpatch8300only
+          patches.ext_dom_tests_php83
+        ];
       };
       extensions = extensions.php81-to-php8300;
-      cflags = " -Wno-compare-distinct-pointer-types -Wno-implicit-const-int-float-conversion -Wno-deprecated-declarations -Wno-incompatible-function-pointer-types -Wno-incompatible-pointer-types-discards-qualifiers";
     }
     {
       version = "8.3.1";
       hash = "sha256-xA+ukZf6aKUy9qBiwxba/jsExUUTa1S56tSTL8JsauE=";
       extensions = extensions.php81-to-php8300;
+      patches = {
+        php = [
+          patches.ext_libxml_php830_832
+          patches.ext_libxml_php8214
+        ];
+        dom = [ patches.ext_libxml_php830_832 ];
+        simplexml = [ patches.ext_libxml_php830_832 ];
+        soap = [ patches.ext_libxml_php830_832 ];
+        xmlwriter = [ patches.ext_libxml_php830_832 ];
+      };
     }
     {
       version = "8.3.2";
       hash = "sha256-WCs8g3qNlS7//idKXklwbEOojBYoMMKow1gIn+dEkoQ=";
       extensions = extensions.php81-to-php8300;
+      patches = {
+        php = [ patches.ext_libxml_php830_832 ];
+        dom = [ patches.ext_libxml_php830_832 ];
+        simplexml = [ patches.ext_libxml_php830_832 ];
+        soap = [ patches.ext_libxml_php830_832 ];
+        xmlwriter = [ patches.ext_libxml_php830_832 ];
+      };
     }
     {
       version = "8.3.3";
